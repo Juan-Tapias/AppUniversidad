@@ -8,25 +8,30 @@ import java.util.List;
  */
 public class Universidad {
     private String nombre;
-    private List<Persona> participantes;
+    private Map<String, Persona> participantes;
     private List<Actividad> actividades;
 
     public Universidad(String nombre) {
         this.nombre = nombre;
-        this.participantes = new ArrayList<>();
+        this.participantes = new HashMap<>();
         this.actividades = new ArrayList<>();
     }
 
     public String getNombre() {
         return nombre;
     }
+    
+    public boolean existeParticipante(String dni) {
+    return participantes.containsKey(dni);
+    }
 
-    public List<Persona> getParticipantes() {
+
+    public Map<String, Persona> getParticipantes() {
         return participantes;
     }
 
     public void agregarParticipante(Persona persona) {
-        participantes.add(persona);
+        participantes.put(persona.getDni().toString(), persona);
         System.out.println("Se ha agregado a " + persona.getNombre() + " " + persona.getApellido() + " como " + persona.getRol() + " a la universidad.");
     }
 
@@ -39,7 +44,7 @@ public class Universidad {
         System.out.println("\n--- Información de la Universidad: " + nombre + " ---");
         
         System.out.println("\n=== MIEMBROS DE LA UNIVERSIDAD ===");
-        for (Persona persona : participantes) {
+        for (Persona persona : participantes.values()) {
             System.out.println("- " + persona);
         }
 
