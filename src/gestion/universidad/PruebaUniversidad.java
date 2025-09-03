@@ -105,26 +105,38 @@ public class PruebaUniversidad {
         System.out.print("Dni: ");
         int dni = scanner.nextInt();
         scanner.nextLine();
-
+        
         FechaNacimiento fechaNacimiento = new FechaNacimiento(dia, mes, anio);
         DniPersona dniPersona = new DniPersona(dni);
         Persona nuevaPersona = null;
-
+       
+        
+        
         switch (rol) {
             case 1:
                 nuevaPersona = new Estudiante(nombre, apellido, fechaNacimiento, dniPersona);
                 break;
             case 2:
                 nuevaPersona = new Profesor(nombre, apellido, fechaNacimiento, dniPersona);
+
+                Profesor profesor = (Profesor) nuevaPersona;
+
+                for (int i = 0; i < 3; i++) {
+                    System.out.println("Escribe la materia a asignar: ");
+                    String asignatura = scanner.nextLine();
+                    profesor.agregarAsignatura(asignatura);
+                }
                 break;
             case 3:
                 nuevaPersona = new Administrativo(nombre, apellido, fechaNacimiento, dniPersona);
                 break;
         }
-
         if (nuevaPersona != null) {
             universidad.agregarParticipante(nuevaPersona);
         }
+
+
+        
     }
 
     private static void registrarActividad(Scanner scanner, Universidad universidad) {

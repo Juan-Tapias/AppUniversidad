@@ -24,4 +24,21 @@ public class Profesor extends Persona {
     public String getRol() {
         return "Profesor";
     }
+    
+    public boolean agregarAsignatura(String asignatura) {
+        return asignaturas.add(asignatura); 
+    }
+
+    public boolean eliminarAsignatura(String asignatura) {
+        return asignaturas.remove(asignatura);
+    }
+    
+     public Set<String> getAsignaturas() {
+        return asignaturas;
+    }
+     
+   @Override
+    public String toString() {
+        return super.toString() + " | Rol: " + getRol() + " | Asignaturas: " + asignaturas;
+    }
 }
