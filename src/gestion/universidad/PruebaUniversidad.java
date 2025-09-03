@@ -102,20 +102,23 @@ public class PruebaUniversidad {
         int mes = scanner.nextInt();
         System.out.print("Año: ");
         int anio = scanner.nextInt();
-        scanner.nextLine(); // Consumir salto de línea
+        System.out.print("Dni: ");
+        int dni = scanner.nextInt();
+        scanner.nextLine();
 
         FechaNacimiento fechaNacimiento = new FechaNacimiento(dia, mes, anio);
+        DniPersona dniPersona = new DniPersona(dni);
         Persona nuevaPersona = null;
 
         switch (rol) {
             case 1:
-                nuevaPersona = new Estudiante(nombre, apellido, fechaNacimiento);
+                nuevaPersona = new Estudiante(nombre, apellido, fechaNacimiento, dniPersona);
                 break;
             case 2:
-                nuevaPersona = new Profesor(nombre, apellido, fechaNacimiento);
+                nuevaPersona = new Profesor(nombre, apellido, fechaNacimiento, dniPersona);
                 break;
             case 3:
-                nuevaPersona = new Administrativo(nombre, apellido, fechaNacimiento);
+                nuevaPersona = new Administrativo(nombre, apellido, fechaNacimiento, dniPersona);
                 break;
         }
 

@@ -5,11 +5,11 @@ package gestion.universidad;
  */
 public class Estudiante extends Persona {
 
-    public Estudiante(String nombre, String apellido, FechaNacimiento fechaNacimiento) {
-        super(nombre, apellido, fechaNacimiento);
+    public Estudiante(String nombre, String apellido, FechaNacimiento fechaNacimiento, DniPersona dni) {
+        super(nombre, apellido, fechaNacimiento, dni);
     }
 
-    @Override
+    @Override 
     public String getRol() {
         return "Estudiante";
     }
