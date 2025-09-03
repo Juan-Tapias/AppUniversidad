@@ -5,8 +5,8 @@ package gestion.universidad;
  */
 public class Profesor extends Persona {
 
-    public Profesor(String nombre, String apellido, FechaNacimiento fechaNacimiento) {
-        super(nombre, apellido, fechaNacimiento);
+    public Profesor(String nombre, String apellido, FechaNacimiento fechaNacimiento, DniPersona dni) {
+        super(nombre, apellido, fechaNacimiento, dni);
     }
 
     @Override

@@ -5,8 +5,8 @@ package gestion.universidad;
  */
 public class Administrativo extends Persona {
 
-    public Administrativo(String nombre, String apellido, FechaNacimiento fechaNacimiento) {
-        super(nombre, apellido, fechaNacimiento);
+    public Administrativo(String nombre, String apellido, FechaNacimiento fechaNacimiento, DniPersona dni) {
+        super(nombre, apellido, fechaNacimiento, dni);
     }
 
     @Override
