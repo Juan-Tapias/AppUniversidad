@@ -129,7 +129,7 @@ public class PruebaUniversidad {
 
     private static void registrarActividad(Scanner scanner, Universidad universidad) {
         System.out.println("\n--- Registrar Nueva Actividad ---");
-        List<Persona> participantes = universidad.getParticipantes();
+        List<Persona> participantes = (List<Persona>) universidad.getParticipantes();
 
         if (participantes.isEmpty()) {
             System.out.println(">> No hay participantes registrados. Agregue uno primero.");
